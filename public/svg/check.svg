@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="58" height="58" viewBox="0 0 58 58">
+    <defs>
+        <linearGradient id="su6gi9pr0c" x1="92.593%" x2="6.299%" y1="5.691%" y2="100%">
+            <stop offset="0%" stop-color="#F0AA70"/>
+            <stop offset="100%" stop-color="#FFE5C6"/>
+        </linearGradient>
+        <filter id="nm7spgbdja" width="400%" height="400%" x="-150%" y="-150%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.242357337 0 0 0 0 0.092394979 0 0 0 0 0.0156737958 0 0 0 0.2 0"/>
+        </filter>
+        <path id="p138ryxpub" d="M10 0C8.022 0 6.089.586 4.444 1.685 2.8 2.785 1.518 4.345.761 6.173.004 8-.194 10.011.192 11.951c.386 1.94 1.338 3.721 2.737 5.12 1.398 1.399 3.18 2.351 5.12 2.737 1.94.386 3.95.188 5.778-.57 1.827-.756 3.389-2.038 4.488-3.682C19.413 13.91 20 11.978 20 10c0-1.313-.259-2.614-.761-3.827-.503-1.213-1.24-2.315-2.168-3.244C16.142 2 15.041 1.264 13.827.76 12.614.26 11.313 0 10 0zm-.602 12.957L6.065 9.623l1.2-1.202 2.133 2.131 3.524-3.523 1.201 1.202-4.725 4.726z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-758 -226) translate(592 235) translate(185 10)">
+                    <use fill="#000" filter="url(#nm7spgbdja)" xlink:href="#p138ryxpub"/>
+                    <use fill="url(#su6gi9pr0c)" xlink:href="#p138ryxpub"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

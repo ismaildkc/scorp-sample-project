@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="60" height="60" viewBox="0 0 60 60">
+    <defs>
+        <filter id="z810bemjfa" width="400%" height="400%" x="-150%" y="-150%" filterUnits="objectBoundingBox">
+            <feOffset in="SourceAlpha" result="shadowOffsetOuter1"/>
+            <feGaussianBlur in="shadowOffsetOuter1" result="shadowBlurOuter1" stdDeviation="10"/>
+            <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.242357337 0 0 0 0 0.092394979 0 0 0 0 0.0156737958 0 0 0 0.2 0"/>
+        </filter>
+        <path id="0oxgmpp6fb" d="M10 0C8.022 0 6.089.586 4.444 1.685 2.8 2.785 1.518 4.345.761 6.173.004 8-.194 10.011.192 11.951c.386 1.94 1.338 3.721 2.737 5.12 1.398 1.399 3.18 2.351 5.12 2.737 1.94.386 3.95.188 5.778-.57 1.827-.756 3.389-2.038 4.488-3.682C19.413 13.91 20 11.978 20 10c0-1.313-.259-2.614-.761-3.827-.503-1.213-1.24-2.315-2.168-3.244C16.142 2 15.041 1.264 13.827.76 12.614.26 11.313 0 10 0zm-.602 12.957L6.065 9.623l1.2-1.202 2.133 2.131 3.524-3.523 1.201 1.202-4.725 4.726z"/>
+    </defs>
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g transform="translate(-748 -152) translate(592 153) translate(176 19)">
+                    <use fill="#000" filter="url(#z810bemjfa)" xlink:href="#0oxgmpp6fb"/>
+                    <use fill="#FFDA01" xlink:href="#0oxgmpp6fb"/>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
