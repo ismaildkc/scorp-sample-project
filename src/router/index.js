@@ -6,18 +6,32 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/",
-    name: "Home",
-    component: Home
-  },
-  {
-    path: "/carousel",
-    name: "Carousel",
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/Carousel.vue")
-  },
+    path: "/:lang",
+    component: {
+      render (c) { return c("router-view") }
+    },
+    children:[
+      {
+        path: "/",
+        name: "Home",
+        component: Home
+      },
+      {
+        path: "contact",
+        name: "Contact",
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/Contact.vue")
+      },
+      {
+        path: "works",
+        name: "Works",
+        component: () =>
+          import(/* webpackChunkName: "about" */ "../views/Works.vue")
+      },
+    ]
+  }
 
-  { path: '*', redirect: '/sayfa-bulunamadi' },  
+  // { path: '*', redirect: '/sayfa-bulunamadi' },  
 ];
 
 const router = new VueRouter({

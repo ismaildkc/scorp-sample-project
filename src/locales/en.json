@@ -1,0 +1,8 @@
+{
+  "message": "hello i18n !!",
+  "navigation": {
+    "home": "HOME",
+    "works": "WORKS",
+    "contact": "CONTACT"
+  }
+}
