@@ -12,6 +12,20 @@
       background-size: contain !important;
   }
 }
+.icons-flag-tr{
+  mask: url('/svg/flag-tr.svg') no-repeat;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      background: url('/svg/flag-tr.svg') no-repeat !important;
+      background-size: contain !important;
+  }
+}
+.icons-flag-en{
+  mask: url('/svg/flag-en.svg') no-repeat;
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      background: url('/svg/flag-en.svg') no-repeat !important;
+      background-size: contain !important;
+  }
+}
 
 .svg-icon {
   display: inline-block;

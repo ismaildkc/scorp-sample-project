@@ -1,22 +1,14 @@
 <template>
   <div>
     <section class="flex-row page-container position-relative">
-      <img
-        src="https://images.unsplash.com/photo-1507206130118-b5907f817163?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=768&q=80"
-        class="home-img"
-        alt=""
-      />
+      <img src="/img/banner.jpeg" class="home-img" />
+      
       <div class="home-content">
-        <h2>
-          We help <span class="highlight">you</span> to achieve <br />
-          <span class="highlight">your goals</span>
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo itaque
-          nam saepe vero voluptatem vel fuga a eaque earum alias ipsam
-          aspernatur culpa maxime laboriosam, impedit quae officiis consectetur
-        </p>
-        <a href="#services" class="btn">Get Started</a>
+        <h2 v-html="$t('homePage.title')"></h2>
+        <p>{{ $t("homePage.desc") }}</p>
+        <router-link :to="`/${$i18n.locale}/works`" class="btn">{{
+          $t("definitions.ourWorks")
+        }}</router-link>
       </div>
     </section>
   </div>
@@ -30,7 +22,28 @@ export default {
 
 <style lang="scss">
 .home-content {
+  width: 50%;
   max-width: 600px;
 }
 
+.home-img {
+  width: 50%;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  object-fit: cover;
+}
+
+@media (max-width: 1024px){
+  .home-content{
+    width: 100%;
+  }
+  .home-img{
+    width: 100%;
+    z-index: -1;
+    opacity: 0.5;
+  }
+
+}
 </style>

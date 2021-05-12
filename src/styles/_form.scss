@@ -1,22 +1,14 @@
+button{
+  background: transparent;
+  text-decoration: underline;
+}
 form, .subscribe{
   input.error, textarea.error, select.error{
-    background: var(--orange);
-    border-color: var(--orange);
+    border-color: var(--red);
     & + .form-warning{
       display: flex;
       align-items: center;
-      color: var(--orange);
-      .svg-icon{
-        background: var(--orange);
-        margin-right: 4px;
-      }
-    }
-    & + .checkmark{
-      border: 2px solid var(--orange);
-      background: var(--orange);
-      &:before{
-        // background: var(--red);
-      }
+      color: var(--red);
     }
   }
     

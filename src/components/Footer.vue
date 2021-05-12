@@ -2,10 +2,14 @@
   <footer class="d-flex align-items-center">
     <div class="container d-flex justify-content-between">
       <div>
-        Footer
+        © Copyright 2021. All rights reserved.
       </div>
       <div>
-        Footer
+        <nav class="d-none d-md-block">
+          <router-link :to="`/${$i18n.locale}`">{{ $t('navigation.home') }}</router-link>
+          <router-link :to="`/${$i18n.locale}/works`">{{ $t('navigation.works') }}</router-link>
+          <router-link :to="`/${$i18n.locale}/contact`">{{ $t('navigation.contact') }}</router-link>
+        </nav>
       </div>
     </div>
   </footer>

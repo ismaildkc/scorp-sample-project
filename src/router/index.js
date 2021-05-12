@@ -1,10 +1,15 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import i18n from "../i18n";
 import Home from "../views/Home.vue";
 
 Vue.use(VueRouter);
 
 const routes = [
+  {
+    path: "/",
+    redirect: `/${i18n.locale}`
+  },
   {
     path: "/:lang",
     component: {
@@ -36,6 +41,7 @@ const routes = [
 
 const router = new VueRouter({
   mode: "history",
+  linkExactActiveClass: 'is-active',
   base: process.env.BASE_URL,
   routes
 });

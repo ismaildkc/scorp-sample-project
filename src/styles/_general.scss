@@ -20,6 +20,10 @@ html {
   padding-left: 5rem;
   padding-right: 5rem;
   width: 100vw;
+  @media (max-width: 768px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
 }
 
 .btn {
@@ -30,32 +34,20 @@ html {
   font-size: 1.1rem;
   text-decoration: none;
   padding: 10px 30px;
-  margin: 20px 0;
   border: 0;
+  &:hover {
+    background-color: var(--redDark);
+    color: #fff;
+  }
 }
 
-.btn:hover {
-  background-color: var(--redDark);
-  color: #fff;
-}
 
 /* SECTIONS */
 section {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: calc(100vh - 150px - 80px);
   align-items: center;
   padding-top: 5rem;
   padding-bottom: 5rem;
-}
-
-@media (min-width: 1068px) {
-  .home-img {
-    display: block;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    height: 110%;
-  }
-
 }

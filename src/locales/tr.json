@@ -1,8 +1,46 @@
 {
-  "message": "merhaba i18n !!",
+  "definitions": {
+    "login": "GİRİŞ YAP",
+    "close": "Kapat",
+    "nameSurname": "Ad Soyad",
+    "emailAdress": "E-Mail Adresi",
+    "password": "Şifre",
+    "phonenumber": "Telefon Numarası",
+    "message": "Mesajınız",
+    "en": "İngilizce",
+    "tr": "Türkçe",
+    "send": "Gönder",
+    "ourWorks": "İşlere Gözat",
+    "launch": "Gözat"
+  },
+  "formWarnings":{
+    "nameSurname": "Ad Soyad şeklinde giriniz.",
+    "required": "Bu alan zorunludur.",
+    "minLength": "En az 2 karakter girmelisiniz",
+    "wrongPhone": "Yanlış telefon formatı",
+    "wrongMail": "Yanlış mail formatı",
+    "selectCountry": "Ülke seçin"
+  },
+  "countries":{
+    "tr": "Türkiye",
+    "en": "İngiltere",
+    "us": "Amerika",
+    "de": "Almanya",
+    "se": "İsviçre",
+    "ke": "Kenya",
+    "br": "Brazilya"
+  },
   "navigation": {
     "home": "ANA SAYFA",
     "works": "İŞLER",
     "contact": "İLETİŞİM"
+  },
+  "homePage": {
+    "title": "<span class='highlight'>Hedefleri</span> başarmanıza <br /> yardım ediyoruz",
+    "desc": "Filmini mi kapının kulu teldeki cesurca yaptı kapının kulu yazın uzattı sıradanlıktan anlamsız otobüs. Sinema koşuyorlar umut biber sandalye koşuyorlar masaya doğru düşünüyor balıkhaneye teldeki."
+  },
+  "worksPage": {
+    "title": "Bazı işlerimiz",
+    "desc": "Filmini mi kapının kulu teldeki cesurca yaptı kapının kulu yazın uzattı sıradanlıktan anlamsız otobüs. Sinema koşuyorlar umut biber sandalye koşuyorlar masaya doğru düşünüyor balıkhaneye teldeki. Sarmal açılmadan dolayı sarmal açılmadan dolayı gülüyorum mutlu oldular karşıdakine. Masaya doğru sarmal açılmadan dolayı mutlu oldular sıla balıkhaneye adanaya cezbelendi bilgiyasayarı yazın. Masanın sokaklarda sıradanlıktan çobanın cesurca yaptı salladı uzattı öyle ki gülüyorum telefonu un değirmeni eve doğru sokaklarda"
   }
 }

@@ -6,8 +6,6 @@ import store from "./store";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "@/styles/main.scss";
-import JQuery from "jquery";
-window.$ = JQuery;
 
 import api from "@/api";
 

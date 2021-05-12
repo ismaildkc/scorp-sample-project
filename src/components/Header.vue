@@ -4,65 +4,95 @@
       <div class="d-flex align-items-center">
         <router-link to="/" class="logo d-flex align-items-center">
           <span class="svg-icon icons-lama"></span>
-          LAMA
+          LAMA AGENCY
         </router-link>
-        <span> | ANA SAYFA</span>
       </div>
-      <nav class="navigation">
-        <router-link to="/">{{ $t('navigation.home') }}</router-link>
-        <router-link to="/works">{{ $t('navigation.works') }}</router-link>
-        <router-link to="/contact">{{ $t('navigation.contact') }}</router-link>
+      <nav class="d-none d-md-block">
+        <router-link :to="`/${$i18n.locale}`">{{
+          $t("navigation.home")
+        }}</router-link>
+        <router-link :to="`/${$i18n.locale}/works`">{{
+          $t("navigation.works")
+        }}</router-link>
+        <router-link :to="`/${$i18n.locale}/contact`">{{
+          $t("navigation.contact")
+        }}</router-link>
       </nav>
 
-      <div class="d-flex">
-        <select name="lang" id="lang">
-          <option value="tr">TR</option>
-          <option value="en">EN</option>
-        </select>
-        <button type="button" @click="$emit('showLoginModal')">LOGIN</button>
+      <div class="d-none d-md-flex align-items-center">
+        <button
+          class="mr-3 login-button"
+          type="button"
+          v-if="!this.$store.state.isLoggedIn"
+          @click="$emit('showLoginModal')"
+        >
+          {{ $t("definitions.login") }}
+        </button>
+        <UserMenu v-if="this.$store.state.isLoggedIn" />
+        <LanguageSwitcher />
+      </div>
 
-        <div class="user-menu-wrap">
-          <a class="mini-photo-wrapper" href="#"
-            ><img class="mini-photo" src="/img/oval.png" width="50" height="50"
-          /></a>
+      <div class="d-block d-md-none">
+        <ul class="toggle">
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+        <div class="navigation">
+          <ul>
+            <li>
+              <router-link :to="`/${$i18n.locale}`">{{
+                $t("navigation.home")
+              }}</router-link>
+            </li>
+            <li>
+              <router-link :to="`/${$i18n.locale}/works`">{{
+                $t("navigation.works")
+              }}</router-link>
+            </li>
+            <li>
+              <router-link :to="`/${$i18n.locale}/contact`">{{
+                $t("navigation.contact")
+              }}</router-link>
+            </li>
+          </ul>
 
-          <div class="menu-container">
-            <ul class="user-menu">
-              <li class="user-menu__item">
-                Profil Ayarları
-              </li>
-            </ul>
-          </div>
+          <button
+            class="mr-3 mb-3"
+            type="button"
+            v-if="!this.$store.state.isLoggedIn"
+            @click="$emit('showLoginModal')"
+          >
+            {{ $t("definitions.login") }}
+          </button>
         </div>
       </div>
     </div>
-
   </header>
 </template>
 <script>
+import LanguageSwitcher from "@/components/LanguageSwitcher";
+import UserMenu from "@/components/UserMenu";
+
 export default {
   name: "Header",
-  mounted() {
-    // this.slideSection();
-    document.querySelector(".mini-photo-wrapper").addEventListener("click", function() {
-      document.querySelector(".menu-container").classList.toggle("active");
-    });
+  components: {
+    LanguageSwitcher,
+    UserMenu,
   },
-  methods: {
-    slideSection() {
-      const toggleButton = document.querySelector(".toggle");
-      const navigation = document.querySelector(".navigation");
+  mounted() {
+    const toggleButton = document.querySelector(".toggle");
+    const navigation = document.querySelector(".navigation");
 
-      toggleButton.addEventListener("click", () => {
-        toggleButton.classList.toggle("active");
-        navigation.classList.toggle("active");
-      });
+    toggleButton.addEventListener("click", () => {
+      toggleButton.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
 
-      navigation.addEventListener("click", () => {
-        toggleButton.classList.toggle("active");
-        navigation.classList.toggle("active");
-      });
-    },
+    navigation.addEventListener("click", () => {
+      toggleButton.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
   },
 };
 </script>
@@ -82,82 +112,103 @@ header {
     .svg-icon {
       background: var(--red);
       width: 2.5rem;
-      height: 2.5rem;
+      height: 3rem;
+    }
+    &:hover {
+      .svg-icon {
+        background: #000;
+      }
     }
   }
-
-  nav {
-    a {
-      padding: 0 0.5rem;
-    }
-  }
-  // Profile
-  .user-menu-wrap {
-    position: relative;
-    margin-right: 1rem;
+  .login-button {
+    min-width: 100px;
   }
 
-  .menu-container {
-    visibility: hidden;
-    opacity: 0;
+  // Mobile Menu
+  ul.toggle {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 30px;
+    cursor: pointer;
+    z-index: 16;
 
     &.active {
-      visibility: visible;
+      li {
+        &:nth-child(1) {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:nth-child(3) {
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+
+    li {
+      list-style: none;
+      position: absolute;
+      left: 5%;
+      width: 90%;
+      height: 2px;
+      transition: 0.5s;
+      background: var(--red);
+      transform: translateY(-50%) rotate(0);
       opacity: 1;
-      transition: all 0.2s ease-in-out;
+
+      &:nth-child(1) {
+        top: 20%;
+      }
+      &:nth-child(2) {
+        top: 50%;
+      }
+      &:nth-child(3) {
+        top: 80%;
+      }
     }
   }
 
-  .user-menu {
-    position: absolute;
-    right: -155%;
-    margin-top: 15px;
-    background-color: var(--blueOcean);
-    color: #fff;
-    width: 215px;
-    border-radius: 8px;
+  // Mobile Menu
 
-    &:before {
-      position: absolute;
-      top: -16px;
-      left: 120px;
-      display: inline-block;
-      content: "";
-      border: 8px solid transparent;
+  /* NAVIGATION */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 100%;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 15;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    &.active {
+      left: 0;
     }
 
-    &:after {
-      position: absolute;
-      top: -14px;
-      left: 107px;
-      display: inline-block;
-      content: "";
-      border: 7px solid transparent;
-      border-bottom-color: var(--blueOcean);
-    }
-
-    .user-menu__item {
-      .user-menu-link {
-        padding: 0.7rem 1rem;
-        font-size: 0.9rem;
+    ul li {
+      text-align: center;
+      padding-bottom: 5px;
+      a {
+        font-size: 2rem;
         font-weight: 300;
-        display: block;
-        border-bottom: 1px solid var(--purpleLight);
-        &:hover {
-          background: #3d30f8;
-        }
       }
-      &:first-child {
-        .user-menu-link {
-          border-radius: 8px 8px 0 0;
-        }
-      }
-      &:last-child {
-        .user-menu-link {
-          border-bottom: none;
-          border-radius: 0 0 8px 8px;
-        }
-      }
+    }
+  }
+}
+nav {
+  a {
+    padding: 1rem;
+    border-bottom: 1px solid #fff;
+    &.is-active {
+      border-bottom: 1px solid var(--red);
     }
   }
 }
