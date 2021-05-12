@@ -1,4 +1,4 @@
-# Bilim Seferberligi
+# Lama Agency
 
 ## Project setup
 ```
