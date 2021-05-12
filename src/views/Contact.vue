@@ -5,7 +5,7 @@
       autocomplete="off"
       class="col-12 col-md-6 row"
     >
-      <h2 class="col-12">{{ $t("definitions.login") }}</h2>
+      <h2 class="col-12">{{ $t("definitions.contactUs") }}</h2>
 
       <div class="form-group col-12 col-md-6">
         <label for="nameSurname">{{ $t("definitions.nameSurname") }}</label>
@@ -48,8 +48,8 @@
           name="phone"
           id="frmPhoneNumA"
           autocomplete="tel"
-          mask="0(###) ### ## ##"
-          placeholder="0(---) --- -- --"
+          mask="00(###) ### ## ##"
+          placeholder="00(---) --- -- --"
           v-model="form.phonenumber"
           v-bind:class="{
             error: $v.form.phonenumber.$error,

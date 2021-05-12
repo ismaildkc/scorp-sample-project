@@ -7,9 +7,12 @@
     "password": "Password",
     "phonenumber": "Phone Number",
     "message": "Message",
+    "en": "English",
+    "tr": "Turkish",
     "send": "Send",
     "ourWorks": "Our Works",
-    "launch": "Launch"
+    "launch": "Launch",
+    "contactUs": "CONTACT US"
   },
   "formWarnings":{
     "nameSurname": "Enter as name surname.",

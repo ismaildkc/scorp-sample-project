@@ -6,6 +6,7 @@
           <span class="svg-icon icons-lama"></span>
           LAMA AGENCY
         </router-link>
+        <span>| {{  $t("navigation."+ this.$route.name) }}</span>
       </div>
       <nav class="d-none d-md-block">
         <router-link :to="`/${$i18n.locale}`">{{

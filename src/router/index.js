@@ -18,18 +18,18 @@ const routes = [
     children:[
       {
         path: "/",
-        name: "Home",
+        name: "home",
         component: Home
       },
       {
         path: "contact",
-        name: "Contact",
+        name: "contact",
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/Contact.vue")
       },
       {
         path: "works",
-        name: "Works",
+        name: "works",
         component: () =>
           import(/* webpackChunkName: "about" */ "../views/Works.vue")
       },
